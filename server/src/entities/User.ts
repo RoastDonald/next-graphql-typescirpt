@@ -4,6 +4,7 @@ import { Field, ObjectType } from 'type-graphql';
 @ObjectType()
 @Entity()
 export class User {
+  @Field(() => String)
   @PrimaryKey()
   id!: number;
 

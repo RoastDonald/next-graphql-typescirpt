@@ -1,0 +1,11 @@
+mutation signIn($body: UserDAO!) {
+  signIn(body: $body) {
+    errors {
+      field
+      message
+    }
+    user {
+      ...userData
+    }
+  }
+}
