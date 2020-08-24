@@ -1,11 +1,5 @@
-mutation signUp($username: String!, $password: String!) {
-  signUp(body: { username: $username, password: $password }) {
-    errors {
-      field
-      message
-    }
-    user {
-      ...userData
-    }
+mutation signUp($body: UserDto!) {
+  signUp(body: $body) {
+    ...defaultUserResponse
   }
 }

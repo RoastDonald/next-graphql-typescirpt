@@ -1,0 +1,11 @@
+mutation createPost($body: PostDto!) {
+  createPost(body: $body) {
+    id
+    authorId
+    text
+    votes
+    createdAt
+    updatedAt
+    votes
+  }
+}

@@ -8,11 +8,13 @@ type NavBarProps = {};
 const NavBar = (props: NavBarProps) => {
   const [{ data, fetching: dataFetching }] = useMeQuery({ pause: isServer() });
   const [{ fetching: logoutFetching }, logout] = useLogoutMutation();
-  const test = useLogoutMutation();
-  console.log(test);
   let body = null;
   if (dataFetching) {
-    body = <div>loading...</div>;
+    body = (
+      <>
+        <div>laodnig..</div>
+      </>
+    );
   } else if (!data?.me) {
     body = (
       <>
@@ -42,7 +44,7 @@ const NavBar = (props: NavBarProps) => {
     );
   }
   return (
-    <Flex bg="#4287f5" ml="auto" p={6}>
+    <Flex position="sticky" zIndex={1} top={0} bg="#4287f5" ml="auto" p={6}>
       <Box ml="auto">{body}</Box>
     </Flex>
   );
