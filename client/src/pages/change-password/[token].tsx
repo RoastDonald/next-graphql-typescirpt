@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import { withUrqlClient } from 'next-urql';
 import { createUrqlClient } from '../../utils/createUrqlClient';
+
 export const ChangePassword: NextPage = () => {
   const [, changePassword] = useChangePasswordMutation();
   const router = useRouter();

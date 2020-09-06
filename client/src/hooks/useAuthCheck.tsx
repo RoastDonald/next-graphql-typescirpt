@@ -7,8 +7,6 @@ export const useAuthCheck = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(fetching);
-    console.log(data);
     if (!data?.me && !fetching) {
       router.replace('/signin?next=' + router.pathname);
     }

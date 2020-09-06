@@ -9,6 +9,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { Post } from './Post';
+import { Updoot } from './Updoot';
 
 @ObjectType()
 @Entity()
@@ -17,12 +18,15 @@ export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Field(() => String)
+  @Field()
   @Column()
   email!: string;
 
   @OneToMany(() => Post, (post) => post.author)
-  Posts: Post[];
+  posts: Post[];
+
+  @OneToMany(() => Updoot, (updoot) => updoot.user)
+  updoots: Updoot[];
 
   @Field()
   @Column({ unique: true })

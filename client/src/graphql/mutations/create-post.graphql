@@ -3,9 +3,8 @@ mutation createPost($body: PostDto!) {
     id
     authorId
     text
-    votes
+    points
     createdAt
     updatedAt
-    votes
   }
 }
